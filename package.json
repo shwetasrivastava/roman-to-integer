@@ -1,0 +1,16 @@
+{
+  "name": "roman-to-integer",
+  "version": "1.1.0",
+  "description": "Package to convert roman number to integer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "roman",
+    "integer",
+    "converter"
+  ],
+  "author": "Shweta Srivastava",
+  "license": "ISC"
+}
