@@ -20,15 +20,15 @@ npm i roman-to-integer --save
 ```
 
 ## USAGE
-
+```
 var romanToInteger = require('roman-to-integer');
 
 romanToInteger('I');
-
-##OUTPUTS
-
+```
+## OUTPUT
+```
 1
-
+```
 ## KEYWORDS
 
 Roman numbers to integer
