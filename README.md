@@ -19,7 +19,7 @@ Example:
 npm i roman-to-integer --save
 ```
 
-##USAGE
+## USAGE
 
 var romanToInteger = require('roman-to-integer');
 
@@ -29,7 +29,7 @@ romanToInteger('I');
 
 1
 
-##KEYWORDS
+## KEYWORDS
 
 Roman numbers to integer
 Roman
