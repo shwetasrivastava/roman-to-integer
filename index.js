@@ -1,20 +1,31 @@
 function romanToInteger(romanNumber) {
-    romanNumber = romanNumber.toUpperCase();
-    const romanNumList = ["CM","M","CD","D","XC","C","XL","L","IX","X","IV","V","I"];
-    const corresp = [900,1000,400,500,90,100,40,50,9,10,4,5,1];
-    let index =  0, num = 0;
-    for(let rn in romanNumList){
-      index = romanNumber.indexOf(romanNumList[rn]);
-      while(index != -1){
-        num += parseInt(corresp[rn]);
-        romanNumber = romanNumber.replace(romanNumList[rn],"-");
-        index = romanNumber.indexOf(romanNumList[rn]);
-      }
+    if (!romanNumber || typeof romanNumber != 'string' || romanNumber.length <= 0) {
+        return null;
     }
-    console.log(num);
-    return num;
-}
+    
+    const hashmap = new Map();
+    
+    hashmap.set('I', 1);
+    hashmap.set('V', 5);
+    hashmap.set('X', 10);
+    hashmap.set('L', 50);
+    hashmap.set('C', 100);
+    hashmap.set('D', 500);
+    hashmap.set('M', 1000);
+    
+    romanNumber = romanNumber.toUpperCase();
 
-// romanToInteger('CMLVI'); 
+    let int = 0;
+
+    for(let i = 0; i < romanNumber.length; i++) {
+        if (hashmap.get(romanNumber.charAt(i)) < hashmap.get(romanNumber.charAt(i+1))) {
+            int = int - hashmap.get(romanNumber.charAt(i));
+        } else {
+            int = int + hashmap.get(romanNumber.charAt(i));
+        }
+    }
+    
+    return int;
+}
 
 module.exports = romanToInteger;
